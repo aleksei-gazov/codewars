@@ -29,3 +29,58 @@ function getLengthOfMissingArray(arrayOfArrays) {
 
   return 0
 }
+
+
+// A pair of gloves 
+
+function numberOfPairs(gloves)
+{
+ let counts = {};
+let two_dimensial_arr = [];
+let val;
+let sub_arr;
+let sum = 0;
+
+for (let i = 0; i < gloves.length; i++)
+{
+    val = gloves[i];
+    
+    if (!counts.hasOwnProperty(val))
+    {
+        counts[val] = 0;
+    }
+
+    counts[val]++;
+}
+
+for (key in counts)
+{
+    if (counts.hasOwnProperty(key))
+    {
+      
+        sub_arr = [];
+        
+        for (var j = counts[key]; j > 0; j--)
+        {
+                     sub_arr.push(key);
+        }
+             
+        two_dimensial_arr.push(sub_arr);
+    }
+}
+for(let i = 0; i < two_dimensial_arr.length; i++) {
+if(Math.floor(two_dimensial_arr[i].length / 2) > 0) {
+  sum += Math.floor(two_dimensial_arr[i].length / 2)
+} 
+}
+return sum
+}
+
+
+
+
+
+
+
+
+
