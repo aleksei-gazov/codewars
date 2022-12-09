@@ -49,7 +49,17 @@ var runLengthEncoding = function(str){
 }
 
 
+// Reverse words
 
+
+function reverseWords(str) {
+ let arr = str.split(' ')
+ let arrnew = []
+  arr.map((i) => {
+ arrnew.push(i.split('').reverse().join(''))
+})
+  return arrnew.join(' ')
+          }
 
 
 
