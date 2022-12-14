@@ -77,6 +77,19 @@ return sum
 }
 
 
+// Are they the "same"?
+
+function comp(array1, array2){
+  if(array11 === null || array2 === null) return false
+let a = [];
+let b = []
+a =  (array1.map((i)=>{ return i * i
+})).sort((a, b)=>{return a-b})
+b = array2 .sort((a, b)=>{return a-b})
+return JSON.stringify(a) == JSON.stringify(b)
+}
+
+
 
 
 
