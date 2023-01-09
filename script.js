@@ -93,8 +93,11 @@ return JSON.stringify(a) == JSON.stringify(b)
 // String ends with?
 
 function solution(str, ending){
+  if(ending === '') {
+      return true
+  } else
   return str.split('').slice(-ending.length).join('') === ending
-}
+  }
 
 
 
