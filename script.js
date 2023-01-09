@@ -100,6 +100,18 @@ function solution(str, ending){
   }
 
 
+// The highest profit wins!
+
+function minMax(arr){
+  if(arr.length === 1) {
+    return [arr[arr.length-1], arr[arr.length-1]]
+  }
+  let a = arr.sort((a,b)=> a-b).pop()
+  let b = arr.sort((a,b)=> a-b).shift() 
+  return [b, a]; // fix me!
+}
+
+
 
 
 
