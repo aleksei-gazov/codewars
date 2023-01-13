@@ -139,6 +139,27 @@ let multiple = 10;
   return result.join(" + ");
 }
 
+// Who likes it?
 
-
+function likes(names) {
+  let a = new Set(names)
+  let b = []
+  for (let key of a) {
+    b.push(key)
+}
+    let start = b.length>2 ? b.slice(0, 2).join(', ') : b.slice(0, 1).join(', ')
+    let end = b.slice(-1).join(' ')
+  if(!b.length) {
+    return 'no one likes this'
+  }else
+  if(b.length ==1) {
+ return `${start} likes this`
+  } else
+  if(b.length !==0 && b.length <= 3) {
+ return `${start} and ${end} like this`
+  } else
+  if(b.length > 3) {
+  return `${start} and 2 others like this`
+  }
+}
 
