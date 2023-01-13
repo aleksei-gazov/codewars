@@ -144,9 +144,12 @@ let multiple = 10;
 function likes(names) {
   let a = new Set(names)
   let b = []
+  let num = names.length - 2
   for (let key of a) {
     b.push(key)
+  
 }
+
     let start = b.length>2 ? b.slice(0, 2).join(', ') : b.slice(0, 1).join(', ')
     let end = b.slice(-1).join(' ')
   if(!b.length) {
@@ -159,7 +162,6 @@ function likes(names) {
  return `${start} and ${end} like this`
   } else
   if(b.length > 3) {
-  return `${start} and 2 others like this`
+  return `${start} and ${num} others like this`
   }
 }
-
