@@ -258,7 +258,20 @@ console.log(filter_list([1,'a','b',0,15]))
 //and preserving the original order of elements.
 
 var uniqueInOrder=function(iterable){
-   let arrResult = []
+  let arrResult = []
+  if(Array.isArray(iterable)) {
+iterable.join().split(',').map((i, ind, arr)=>{
+if(arrResult.length === 0) {
+  if(!isNaN(i)) {
+arrResult.push(+i)
+  } else arrResult.push(i)
+} else if(arrResult[arrResult.length-1] != i) {
+   if(!isNaN(i)) {
+arrResult.push(+i)
+  }else arrResult.push(i)
+}
+} )
+  } else {
 let a = iterable.split('')
  a.map((i, ind, arr)=>{
 if(arrResult.length === 0) {
@@ -267,8 +280,14 @@ if(arrResult.length === 0) {
   arrResult.push(i)
 }
 } )
+  }
+
 return arrResult
 }
+
+console.log(uniqueInOrder('AAAABBBCCDAABBB'))
+console.log(uniqueInOrder([1,2,2,3,3]) )
+console.log(uniqueInOrder(['a','s','s','d','d']) )
 
 
 
