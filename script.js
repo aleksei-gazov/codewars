@@ -290,6 +290,19 @@ console.log(uniqueInOrder([1,2,2,3,3]) )
 console.log(uniqueInOrder(['a','s','s','d','d']) )
 
 
+Extract the domain name from a URL
+
+function domainName(url){
+if(url.includes('http')) {
+  let a = new URL(url).host
+  let b = a.split('.')
+  return b[0]
+} else {
+  let a = url.split('.')
+  return a[1]
+}
+}
+
 
 
 
